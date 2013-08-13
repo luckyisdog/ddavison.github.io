@@ -1,8 +1,16 @@
 ---
 layout: page
-title: Recent
-tagline: Discoveries - snippets - and everything inbetween
+title: Recent Posts
+tagline: 20 most recent
 ---
 {% include JB/setup %}
 
-
+<ul class="posts">  
+  {% for post in site.posts limit:20 %}  
+     <li>  
+       <span>{{ post.date | date_to_string }}</span> &raquo;  
+       <a href="{{ BASE_PATH }}{{ post.url }}">  
+       {{ post.title }}</a>  
+     </li>  
+  {% endfor %}  
+</ul>
